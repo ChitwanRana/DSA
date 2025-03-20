@@ -9,9 +9,6 @@ bool search(int arr[],int size,int input){
           }
      }
 
-
-     
-
 }
 
 int main(){

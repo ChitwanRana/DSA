@@ -1,6 +1,18 @@
 #include<iostream>
 using namespace std;
 
+int lowercase(char ch){
+
+     int temp;
+
+     if(ch>= 'a'&& ch<='z'){
+          return ch;
+     }
+     else{
+          temp=ch-'A'+'a';
+          return temp;
+     }
+}
 
 bool reverse(char name[]){
 
@@ -10,10 +22,11 @@ bool reverse(char name[]){
      for(int i=0;i<name[i]!='\0';i++){
           count++;
      }
+     
      int end=count-1;
 
      while(start<end){
-          if(name[start]!=name[end]){
+          if(lowercase(name[start])!=lowercase(name[end])){
                return 0;
           }
           else{
