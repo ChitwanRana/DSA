@@ -11,7 +11,7 @@ void linear_search(int arr[],int size,int key){
           }
      }
      cout<<"found at" <<ans;
- 
+
 }
 
 
