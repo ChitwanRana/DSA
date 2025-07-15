@@ -23,6 +23,23 @@ string longest_prefix(vector<string> &str){
     return ans;
 }
 
+string approach(vector<string> &str){
+
+     string s1=str[0];
+     int ans_length=s1.size();
+
+     for(int i=1;i<str.size();i++){
+          int j=0;
+          while(j<s1.size() && j<str[i].size() && s1[j]==str[i][j]){
+               j++;
+          }
+          ans_length=min(ans_length,j);
+          
+     }
+     string aprch=s1.substr(0,ans_length);
+     return  aprch;
+}
+
 int main(){
 
      int n;
@@ -36,6 +53,7 @@ int main(){
           cin>>str[i];
      }
 
-     cout<<"Longest Substring is :"<<longest_prefix(str);
+     cout<<"Longest Substring is :"<<longest_prefix(str)<<endl;
+     cout<<"Longest Substring using 2nd approach :"<<approach(str);
 
 }
