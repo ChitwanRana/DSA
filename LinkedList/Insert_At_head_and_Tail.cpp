@@ -35,13 +35,21 @@ void InsertAtHead(Node* &head, int d){
           tail=temp1;
      }
 
-     void InsertAtPosn(Node* head,int posn, int d){
+     void InsertAtPosn(Node* head,Node* tail,int posn, int d){
+          if(posn==1){
+            InsertAtHead(head,d);
+          }
+
           Node* temp=head;
           Node* newnode= new Node(d);
+
           int count=1;
           while(count<posn-1){
                temp=temp->next;
                count++;
+          }
+          if(temp->next==NULL){
+               InsertAtTail(tail,d);
           }
           newnode->next=temp->next;
           temp->next=newnode;
@@ -63,6 +71,6 @@ int main(){
      InsertAtTail(tail,30);
      print(head);
      cout<<endl;
-     InsertAtPosn(head,3,123);
+     InsertAtPosn(head,tail,3,123);
      print(head);
 }
